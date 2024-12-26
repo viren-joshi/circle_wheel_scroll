@@ -262,8 +262,9 @@ class RenderCircleListViewport extends RenderBox
 
   @override
   void setupParentData(RenderObject child) {
-    if (child.parentData is! CircleListParentData)
+    if (child.parentData is! CircleListParentData) {
       child.parentData = CircleListParentData();
+    }
   }
 
   @override
@@ -718,7 +719,7 @@ class RenderCircleListViewport extends RenderBox
 
   @override
   RevealedOffset getOffsetToReveal(RenderObject target, double alignment,
-      {Rect? rect}) {
+      {Rect? rect, Axis? axis}) {
     // `target` is only fully revealed when in the selected/center position. Therefore,
     // this method always returns the offset that shows `target` in the center position,
     // which is the same offset for all `alignment` values.
